@@ -1,17 +1,16 @@
-﻿int index = 1;
-string name = "Pablo";
-char initial = 'P';
-int year = 2022;
-decimal height = 1.85m;
-bool doWeLoveToCode = true;
+﻿Console.WriteLine("Please type your name");
 
-string myParagraph = @$"These are the most common data types:
-{index++} - string, example: {name}
-{index++} - char, example: {initial}
-{index++} - int, example: {year}
-{index++} - decimal, example: {height}
-{index++} - bool, example: {doWeLoveToCode}";
+var name = Console.ReadLine();
+var date = DateTime.UtcNow;
 
-Console.WriteLine(myParagraph);
+Console.WriteLine("---------------------------------------------");
+Console.WriteLine($"Hello {name.ToUpper()}. It's {date.DayOfWeek}. This is your math's game. That's great that you're working on improving yourself\n");
+Console.WriteLine(@$"What game would you like to play today? Choose from the options below:
+A - Addition
+S - Subtraction
+M - Multiplication
+D - Division
+Q - Quit the program");
+Console.WriteLine("---------------------------------------------");
 
 Console.ReadLine();
