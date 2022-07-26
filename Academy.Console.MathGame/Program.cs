@@ -1,8 +1,17 @@
-﻿Console.WriteLine("These are the most common data types:");
-Console.WriteLine(1 + " string , Example: " + "Pablo");
-Console.WriteLine(2 + " char , Example: " + 'P');
-Console.WriteLine(3 + " int , Example: " + 2022);
-Console.WriteLine(4 + " decimal , Example: " + 1.85m);
-Console.WriteLine(5 + " bool  , Example: " + true);
-Console.ReadLine();
+﻿int index = 1;
+string name = "Pablo";
+char initial = 'P';
+int year = 2022;
+decimal height = 1.85m;
+bool doWeLoveToCode = true;
+DateTime today = DateTime.Now;
 
+Console.WriteLine(
+    @$"These are C#'s 6 most common data types:
+{index++} - string, example: {name}
+{index++} - char, example: {initial}
+{index++} - int, example: {year}
+{index++} - decimal, example: {height}
+{index++} - bool, example: {doWeLoveToCode}");
+
+Console.ReadLine();
