@@ -14,40 +14,47 @@ string GetName()
 void Menu(string name)
 {
     Console.WriteLine("---------------------------------------------");
-    Console.WriteLine($"Hello {name.ToUpper()}. It's {date}. This is your math's game. That's great that you're working on improving yourself\n");
-    Console.WriteLine(@$"What game would you like to play today? Choose from the options below:
-A - Addition
-S - Subtraction
-M - Multiplication
-D - Division
-Q - Quit the program");
-    Console.WriteLine("---------------------------------------------");
+    Console.WriteLine($"Hello {name}. It's {date}. This is your math's game. That's great that you're working on improving yourself");
+    Console.WriteLine("\n");
 
-    var gameSelected = Console.ReadLine();
+    var isGameOn = true;
 
-    switch (gameSelected.Trim().ToLower())
+    do
     {
-        case "a":
-            AdditionGame("Addition selected");
-            break;
-        case "s":
-            SubtractionGame("Subtraction selected");
-            break;
-        case "m":
-            MultiplicationGame("Multiplication selected");
-            break;
-        case "d":
-            DivisionGame("Division selected");
-            break;
-        case "q":
-            Console.WriteLine("Goodbye");
-            Environment.Exit(0);
-            break;
-        default:
-            Console.WriteLine("Invalid Input");
-            Environment.Exit(0);
-            break;
-    }
+        Console.Clear();
+        Console.WriteLine(@$"What game would you like to play today? Choose from the options below:
+                             A - Addition
+                             S - Subtraction
+                             M - Multiplication
+                             D - Division
+                             Q - Quit the program");
+        Console.WriteLine("---------------------------------------------");
+
+        var gameSelected = Console.ReadLine();
+
+        switch (gameSelected.Trim().ToLower())
+        {
+            case "a":
+                AdditionGame("Addition game");
+                break;
+            case "s":
+                SubtractionGame("Subtraction game");
+                break;
+            case "m":
+                MultiplicationGame("Multiplication game");
+                break;
+            case "d":
+                DivisionGame("Division game");
+                break;
+            case "q":
+                Console.WriteLine("Goodbye");
+                isGameOn = false;
+                break;
+            default:
+                Console.WriteLine("Invalid Input");
+                break;
+        }
+    } while (isGameOn);
 }
 
 void DivisionGame(string message)
@@ -78,7 +85,11 @@ void DivisionGame(string message)
             Console.ReadLine();
         }
 
-        if (i == 4) Console.WriteLine($"Game over. Your final score is {score}");
+        if (i == 4)
+        {
+            Console.WriteLine($"Game over. Your final score is {score}. Press any key to go back to the main menu.");
+            Console.ReadLine();
+        }
     }
 }
 
@@ -115,7 +126,11 @@ void MultiplicationGame(string message)
             Console.ReadLine();
         }
 
-        if (i == 4) Console.WriteLine($"Game over. Your final score is {score}");
+        if (i == 4)
+        {
+            Console.WriteLine($"Game over. Your final score is {score}. Press any key to go back to the main menu.");
+            Console.ReadLine();
+        }
     }
 }
 
@@ -152,7 +167,11 @@ void SubtractionGame(string message)
             Console.ReadLine();
         }
 
-        if (i == 4) Console.WriteLine($"Game over. Your final score is {score}");
+        if (i == 4)
+        {
+            Console.WriteLine($"Game over. Your final score is {score}. Press any key to go back to the main menu.");
+            Console.ReadLine();
+        }
     }
 }
 
@@ -189,7 +208,11 @@ void AdditionGame(string message)
             Console.ReadLine();
         }
 
-        if (i == 4) Console.WriteLine($"Game over. Your final score is {score}");
+        if (i == 4)
+        {
+            Console.WriteLine($"Game over. Your final score is {score}. Press any key to go back to the main menu.");
+            Console.ReadLine();
+        }
     }
 }
 
