@@ -1,10 +1,12 @@
-﻿namespace MyFirstProgram
-{
-    public class Helpers
-    {
-        public static List<string> games = new List<string>();
+﻿using Academy.Console.MathGame.Models;
 
-        public static int[] GetDivisionNumbers()
+namespace MyFirstProgram
+{
+    internal class Helpers
+    {
+        internal static List<Game> games = new List<Game>();
+
+        internal static int[] GetDivisionNumbers()
         {
             var random = new Random();
             var firstNumber = random.Next(1, 99);
@@ -24,19 +26,24 @@
             return result;
         }
 
-        public static void AddToHistory(int gameScore, string gameType)
+        internal static void AddToHistory(int gameScore, string gameType)
         {
-            games.Add($"{DateTime.Now} - {gameType}: {gameScore} pts");
+            games.Add(new Game
+            {
+                Date = DateTime.Now,
+                Score = gameScore,
+                Type = gameType
+            });
         }
 
-        public static void PrintGames()
+        internal static void PrintGames()
         {
             Console.Clear();
             Console.WriteLine("Games History");
             Console.WriteLine("---------------------------");
             foreach (var game in games)
             {
-                Console.WriteLine(game);
+                Console.WriteLine($"{game.Date} - {game.Type}: {game.Score}pts");
             }
             Console.WriteLine("---------------------------\n");
             Console.WriteLine("Press any key to return to Main Menu");

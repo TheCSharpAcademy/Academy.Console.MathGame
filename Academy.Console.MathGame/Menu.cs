@@ -4,11 +4,8 @@
     {
         GameEngine gamesClass = new();
 
-        internal void ShowMenu()
+        internal void ShowMenu(string name, DateTime date)
         {
-            string name = GetName();
-            var date = DateTime.UtcNow;
-
             Console.WriteLine("---------------------------------------------");
             Console.WriteLine($"Hello {name}. It's {date}. This is your math's game. That's great that you're working on improving yourself");
             Console.WriteLine("\n");
@@ -56,13 +53,6 @@ Q - Quit the program");
                         break;
                 }
             } while (isGameOn);
-        }
-
-        string GetName()
-        {
-            Console.WriteLine("Please type your name");
-            var name = Console.ReadLine();
-            return name;
         }
     }
 }
