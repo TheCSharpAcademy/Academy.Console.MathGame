@@ -9,9 +9,9 @@ internal class Game
     //    get { return _score; } 
     //    set { _score = value; }
     //}
-    public DateTime Date { get; set; }
+    internal DateTime Date { get; set; }
 
-    public int Score { get; set; }
+    internal int Score { get; set; }
 
-    public string Type { get; set; }
+    internal string Type { get; set; }
 }
