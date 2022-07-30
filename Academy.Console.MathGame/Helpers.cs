@@ -1,10 +1,10 @@
 ﻿namespace MyFirstProgram
 {
-    public class Helpers
+    internal class Helpers
     {
-        public static List<string> games = new List<string>();
+        internal static List<string> games = new List<string>();
 
-        public static int[] GetDivisionNumbers()
+        internal static int[] GetDivisionNumbers()
         {
             var random = new Random();
             var firstNumber = random.Next(1, 99);
@@ -24,12 +24,12 @@
             return result;
         }
 
-        public static void AddToHistory(int gameScore, string gameType)
+        internal static void AddToHistory(int gameScore, string gameType)
         {
             games.Add($"{DateTime.Now} - {gameType}: {gameScore} pts");
         }
 
-        public static void PrintGames()
+        internal static void PrintGames()
         {
             Console.Clear();
             Console.WriteLine("Games History");
