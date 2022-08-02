@@ -53,20 +53,45 @@ internal class Helpers
 
     internal static void PrintGames()
     {
-        // var gamesToPRint = games.Where(x => x.Type == GameType.Division);
-        // var gamesToPRint = games.Where(x => x.Date > new DateTime(2022, 08, 09));
-        // var gamesToPRint = games.Where(x => x.Date > new DateTime(2022, 08, 09) && x.Score > 3);
-        var gamesToPrint = games.Where(x => x.Date > new DateTime(2022, 08, 09)).OrderByDescending(x => x.Score);
+        // var gamesToPrint = games.Where(x => x.Type == GameType.Division);
+        // var gamesToPrint = games.Where(x => x.Date > new DateTime(2022, 08, 09));
+        // var gamesToPrint = games.Where(x => x.Date > new DateTime(2022, 08, 09) && x.Score > 3);
+        // var gamesToPrint = games.Where(x => x.Date > new DateTime(2022, 08, 09)).OrderByDescending(x => x.Score);
 
         Console.Clear();
         Console.WriteLine("Games History");
         Console.WriteLine("---------------------------");
-        foreach (var game in gamesToPrint)
+        foreach (var game in games)
         {
             Console.WriteLine($"{game.Date} - {game.Type}: {game.Score}pts");
         }
         Console.WriteLine("---------------------------\n");
         Console.WriteLine("Press any key to return to Main Menu");
         Console.ReadLine();
+    }
+
+    internal static string ValidateResult(string? result)
+    {
+        while (string.IsNullOrEmpty(result) || !Int32.TryParse(result, out _))
+        {
+            Console.WriteLine("Your answer needs to be an integer. Try again.");
+            result = Console.ReadLine();
+        }
+
+        return result;
+    }
+
+    internal static string GetName()
+    {
+        Console.WriteLine("Please type your name");
+        var name = Console.ReadLine();
+
+        while (string.IsNullOrEmpty(name))
+        {
+            Console.WriteLine("Name can't be empty");
+            name = Console.ReadLine();
+        }
+
+        return name;
     }
 }
